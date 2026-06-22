@@ -1,6 +1,7 @@
 using EmployeeStructureSystem.Application.Departments;
 using EmployeeStructureSystem.Application.Employees;
 using EmployeeStructureSystem.Application.Positions;
+using EmployeeStructureSystem.Application.Reports;
 using EmployeeStructureSystem.Domain.Entities;
 using EmployeeStructureSystem.Infrastructure.Persistence;
 using EmployeeStructureSystem.Infrastructure.Services;
@@ -126,5 +127,42 @@ public sealed class ServiceBehaviorTests : IAsyncLifetime
         Assert.False(result.Succeeded);
         Assert.Contains(nameof(EmployeeUpsertRequest.DepartmentId), result.ValidationErrors.Keys);
         Assert.Contains(nameof(EmployeeUpsertRequest.PositionId), result.ValidationErrors.Keys);
+    }
+
+    [Fact]
+    public async Task SalaryReportService_Returns_Department_And_Company_Totals()
+    {
+        var engineering = new Department("Engineering");
+        var hr = new Department("Human Resources");
+        var developer = new Position("Developer");
+        var recruiter = new Position("Recruiter");
+
+        _dbContext.Departments.AddRange(engineering, hr);
+        _dbContext.Positions.AddRange(developer, recruiter);
+        await _dbContext.SaveChangesAsync();
+
+        _dbContext.Employees.AddRange(
+            new Employee("Ada", "Lovelace", 4000m, engineering.Id, developer.Id),
+            new Employee("Grace", "Hopper", 5000m, engineering.Id, developer.Id),
+            new Employee("Mina", "Lee", 3000m, hr.Id, recruiter.Id));
+        await _dbContext.SaveChangesAsync();
+
+        var service = new SalaryReportService(_dbContext);
+        var report = await service.GetSalaryReportAsync();
+
+        Assert.Equal(3, report.TotalEmployees);
+        Assert.Equal(12000m, report.TotalSalary);
+        Assert.Equal(4000m, report.AverageSalary);
+
+        Assert.Equal(2, report.Departments.Count);
+        Assert.Equal("Engineering", report.Departments[0].DepartmentName);
+        Assert.Equal(2, report.Departments[0].EmployeeCount);
+        Assert.Equal(9000m, report.Departments[0].TotalSalary);
+        Assert.Equal(4500m, report.Departments[0].AverageSalary);
+
+        Assert.Equal("Human Resources", report.Departments[1].DepartmentName);
+        Assert.Equal(1, report.Departments[1].EmployeeCount);
+        Assert.Equal(3000m, report.Departments[1].TotalSalary);
+        Assert.Equal(3000m, report.Departments[1].AverageSalary);
     }
 }

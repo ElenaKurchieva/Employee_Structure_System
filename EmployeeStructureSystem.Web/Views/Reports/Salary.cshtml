@@ -1,0 +1,63 @@
+@model EmployeeStructureSystem.Web.Models.Reports.SalaryReportViewModel
+
+@{
+    ViewData["Title"] = "Salary Report";
+}
+
+<section class="page-header mb-4">
+    <div>
+        <p class="eyebrow">Reporting</p>
+        <h1>Salary report</h1>
+        <p class="table-muted mb-0">Review total and average salary cost by department, plus company-wide totals.</p>
+    </div>
+</section>
+
+<section class="stats-grid mb-4">
+    <article class="stat-card">
+        <span class="stat-label">Total salary</span>
+        <strong class="stat-value">@Model.TotalSalary.ToString("C")</strong>
+        <span class="stat-hint">Combined salary cost across all departments</span>
+    </article>
+    <article class="stat-card">
+        <span class="stat-label">Average salary</span>
+        <strong class="stat-value">@Model.AverageSalary.ToString("C")</strong>
+        <span class="stat-hint">Average salary across @Model.TotalEmployees employees</span>
+    </article>
+</section>
+
+<div class="card shadow-sm border-0">
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead>
+                    <tr>
+                        <th>Department</th>
+                        <th>Employees</th>
+                        <th>Total salary</th>
+                        <th>Average salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @if (Model.Departments.Count == 0)
+                {
+                    <tr>
+                        <td colspan="4" class="table-muted">No departments or employees are available for reporting yet.</td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var department in Model.Departments)
+                    {
+                        <tr>
+                            <td>@department.DepartmentName</td>
+                            <td>@department.EmployeeCount</td>
+                            <td>@department.TotalSalary.ToString("C")</td>
+                            <td>@department.AverageSalary.ToString("C")</td>
+                        </tr>
+                    }
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

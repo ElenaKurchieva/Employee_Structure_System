@@ -150,7 +150,6 @@ C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStru
 C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Web\obj\Debug\net9.0\EmployeeStructureSystem.Web.pdb
 C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Web\obj\Debug\net9.0\EmployeeStructureSystem.Web.genruntimeconfig.cache
 C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Web\obj\Debug\net9.0\ref\EmployeeStructureSystem.Web.dll
-C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Web\obj\Debug\net9.0\compressed\lvn8368q9e-skw49m5bu4.gz
 C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Web\bin\Debug\net9.0\Humanizer.dll
 C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Web\bin\Debug\net9.0\Microsoft.Build.Locator.dll
 C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
@@ -233,3 +232,4 @@ C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStru
 C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Web\obj\Debug\net9.0\compressed\lvn8368q9e-uwb8jxbqc6.gz
