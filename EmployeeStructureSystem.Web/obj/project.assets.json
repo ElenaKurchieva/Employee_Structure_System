@@ -4740,17 +4740,17 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Web\\EmployeeStructureSystem.Web.csproj",
+      "projectUniqueName": "C:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Web\\EmployeeStructureSystem.Web.csproj",
       "projectName": "EmployeeStructureSystem.Web",
-      "projectPath": "c:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Web\\EmployeeStructureSystem.Web.csproj",
+      "projectPath": "C:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Web\\EmployeeStructureSystem.Web.csproj",
       "packagesPath": "C:\\Users\\elena.kyurchieva\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Web\\obj\\",
+      "outputPath": "C:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "c:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\NuGet.Config",
+        "C:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\NuGet.Config",
         "C:\\Users\\elena.kyurchieva\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
@@ -4767,8 +4767,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "c:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Application\\EmployeeStructureSystem.Application.csproj": {
-              "projectPath": "c:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Application\\EmployeeStructureSystem.Application.csproj"
+            "C:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Application\\EmployeeStructureSystem.Application.csproj": {
+              "projectPath": "C:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Application\\EmployeeStructureSystem.Application.csproj"
             },
             "C:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Infrastructure\\EmployeeStructureSystem.Infrastructure.csproj": {
               "projectPath": "C:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Infrastructure\\EmployeeStructureSystem.Infrastructure.csproj"

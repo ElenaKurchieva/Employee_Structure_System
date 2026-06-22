@@ -111,6 +111,38 @@ public sealed class ServiceBehaviorTests : IAsyncLifetime
     }
 
     [Fact]
+    public async Task EmployeeService_Filters_By_Department_And_Position()
+    {
+        var engineering = new Department("Engineering");
+        var hr = new Department("Human Resources");
+        var developer = new Position("Developer");
+        var recruiter = new Position("Recruiter");
+
+        _dbContext.Departments.AddRange(engineering, hr);
+        _dbContext.Positions.AddRange(developer, recruiter);
+        await _dbContext.SaveChangesAsync();
+
+        _dbContext.Employees.AddRange(
+            new Employee("Ada", "Lovelace", 4000m, engineering.Id, developer.Id),
+            new Employee("Grace", "Hopper", 5000m, engineering.Id, recruiter.Id),
+            new Employee("Mina", "Lee", 3000m, hr.Id, recruiter.Id));
+        await _dbContext.SaveChangesAsync();
+
+        var service = new EmployeeService(_dbContext);
+
+        var byDepartment = await service.GetAllAsync(departmentId: engineering.Id);
+        var byPosition = await service.GetAllAsync(positionId: recruiter.Id);
+        var byDepartmentAndPosition = await service.GetAllAsync(engineering.Id, recruiter.Id);
+
+        Assert.Equal(2, byDepartment.Count);
+        Assert.Equal(2, byPosition.Count);
+        Assert.Single(byDepartmentAndPosition);
+        Assert.Equal("Grace", byDepartmentAndPosition[0].FirstName);
+        Assert.Equal("Engineering", byDepartmentAndPosition[0].DepartmentName);
+        Assert.Equal("Recruiter", byDepartmentAndPosition[0].PositionTitle);
+    }
+
+    [Fact]
     public async Task EmployeeService_Rejects_Invalid_Assignment()
     {
         var service = new EmployeeService(_dbContext);

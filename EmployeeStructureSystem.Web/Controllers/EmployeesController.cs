@@ -24,19 +24,33 @@ public sealed class EmployeesController : Controller
         _positionService = positionService;
     }
 
-    public async Task<IActionResult> Index(CancellationToken cancellationToken)
+    public async Task<IActionResult> Index(int? departmentId, int? positionId, CancellationToken cancellationToken)
     {
-        var employees = await _employeeService.GetAllAsync(cancellationToken);
-        var model = employees.Select(x => new EmployeeListItemViewModel
+        var employees = await _employeeService.GetAllAsync(departmentId, positionId, cancellationToken);
+        var departments = await _departmentService.GetAllAsync(cancellationToken);
+        var positions = await _positionService.GetAllAsync(cancellationToken);
+
+        var model = new EmployeeIndexViewModel
         {
-            Id = x.Id,
-            FirstName = x.FirstName,
-            LastName = x.LastName,
-            Email = x.Email,
-            Salary = x.Salary,
-            DepartmentName = x.DepartmentName,
-            PositionTitle = x.PositionTitle
-        }).ToList();
+            DepartmentId = departmentId,
+            PositionId = positionId,
+            DepartmentOptions = BuildSelectOptions(
+                departments.Select(x => new KeyValuePair<int, string>(x.Id, x.Name)),
+                "All departments"),
+            PositionOptions = BuildSelectOptions(
+                positions.Select(x => new KeyValuePair<int, string>(x.Id, x.Title)),
+                "All positions"),
+            Employees = employees.Select(x => new EmployeeListItemViewModel
+            {
+                Id = x.Id,
+                FirstName = x.FirstName,
+                LastName = x.LastName,
+                Email = x.Email,
+                Salary = x.Salary,
+                DepartmentName = x.DepartmentName,
+                PositionTitle = x.PositionTitle
+            }).ToList()
+        };
 
         return View(model);
     }
@@ -212,5 +226,16 @@ public sealed class EmployeesController : Controller
                 .Select(x => new SelectListItem(x.Title, x.Id.ToString()))
                 .ToList()
         };
+    }
+
+    private static List<SelectListItem> BuildSelectOptions(IEnumerable<KeyValuePair<int, string>> items, string defaultText)
+    {
+        var options = new List<SelectListItem>
+        {
+            new(defaultText, string.Empty)
+        };
+
+        options.AddRange(items.Select(x => new SelectListItem(x.Value, x.Key.ToString())));
+        return options;
     }
 }

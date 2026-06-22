@@ -15,10 +15,23 @@ public sealed class EmployeeService : IEmployeeService
         _dbContext = dbContext;
     }
 
-    public async Task<IReadOnlyList<EmployeeDto>> GetAllAsync(CancellationToken cancellationToken = default)
+    public async Task<IReadOnlyList<EmployeeDto>> GetAllAsync(int? departmentId = null, int? positionId = null, CancellationToken cancellationToken = default)
     {
-        return await _dbContext.Employees
+        var query = _dbContext.Employees
             .AsNoTracking()
+            .AsQueryable();
+
+        if (departmentId.HasValue)
+        {
+            query = query.Where(x => x.DepartmentId == departmentId.Value);
+        }
+
+        if (positionId.HasValue)
+        {
+            query = query.Where(x => x.PositionId == positionId.Value);
+        }
+
+        return await query
             .OrderBy(x => x.LastName)
             .ThenBy(x => x.FirstName)
             .Select(x => new EmployeeDto(

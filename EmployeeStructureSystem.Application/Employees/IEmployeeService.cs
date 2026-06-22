@@ -4,7 +4,7 @@ namespace EmployeeStructureSystem.Application.Employees;
 
 public interface IEmployeeService
 {
-    Task<IReadOnlyList<EmployeeDto>> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<IReadOnlyList<EmployeeDto>> GetAllAsync(int? departmentId = null, int? positionId = null, CancellationToken cancellationToken = default);
 
     Task<EmployeeDto?> GetByIdAsync(int id, CancellationToken cancellationToken = default);
 
