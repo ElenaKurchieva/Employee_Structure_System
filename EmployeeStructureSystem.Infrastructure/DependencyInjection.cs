@@ -1,5 +1,6 @@
 using EmployeeStructureSystem.Application.Dashboard;
 using EmployeeStructureSystem.Application.Departments;
+using EmployeeStructureSystem.Application.Employees;
 using EmployeeStructureSystem.Application.Positions;
 using EmployeeStructureSystem.Infrastructure.Persistence;
 using EmployeeStructureSystem.Infrastructure.Services;
@@ -19,6 +20,7 @@ public static class DependencyInjection
         services.AddDbContext<EmployeeStructureDbContext>(options => options.UseSqlServer(connectionString));
         services.AddScoped<IDashboardService, DashboardService>();
         services.AddScoped<IDepartmentService, DepartmentService>();
+        services.AddScoped<IEmployeeService, EmployeeService>();
         services.AddScoped<IPositionService, PositionService>();
 
         return services;

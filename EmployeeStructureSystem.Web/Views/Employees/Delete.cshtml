@@ -1,0 +1,35 @@
+@model EmployeeDeleteViewModel
+
+@{
+    ViewData["Title"] = "Delete Employee";
+}
+
+<section class="page-header">
+    <div>
+        <p class="eyebrow">Employees</p>
+        <h1 class="h2 mb-2">Delete employee</h1>
+        <p class="section-copy mb-0">Review the employee details before permanently removing the record.</p>
+    </div>
+</section>
+
+<section class="content-card form-card">
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+    <dl class="row mb-4">
+        <dt class="col-sm-3">Name</dt>
+        <dd class="col-sm-9">@Model.FirstName @Model.LastName</dd>
+        <dt class="col-sm-3">Email</dt>
+        <dd class="col-sm-9">@(string.IsNullOrWhiteSpace(Model.Email) ? "No email" : Model.Email)</dd>
+        <dt class="col-sm-3">Department</dt>
+        <dd class="col-sm-9">@Model.DepartmentName</dd>
+        <dt class="col-sm-3">Position</dt>
+        <dd class="col-sm-9">@Model.PositionTitle</dd>
+        <dt class="col-sm-3">Salary</dt>
+        <dd class="col-sm-9">@Model.Salary.ToString("C")</dd>
+    </dl>
+    <form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+        <div class="page-actions">
+            <button type="submit" class="btn btn-danger">Delete Employee</button>
+            <a class="btn btn-outline-secondary" asp-action="Index">Cancel</a>
+        </div>
+    </form>
+</section>

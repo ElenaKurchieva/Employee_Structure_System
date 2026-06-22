@@ -1,4 +1,5 @@
 using EmployeeStructureSystem.Application.Departments;
+using EmployeeStructureSystem.Application.Employees;
 using EmployeeStructureSystem.Application.Positions;
 using EmployeeStructureSystem.Domain.Entities;
 using EmployeeStructureSystem.Infrastructure.Persistence;
@@ -78,5 +79,52 @@ public sealed class ServiceBehaviorTests : IAsyncLifetime
 
         Assert.Single(departments);
         Assert.Equal(1, departments[0].EmployeeCount);
+    }
+
+    [Fact]
+    public async Task EmployeeService_Creates_Employee_With_Assignments()
+    {
+        var department = new Department("Engineering");
+        var position = new Position("Developer");
+        _dbContext.Departments.Add(department);
+        _dbContext.Positions.Add(position);
+        await _dbContext.SaveChangesAsync();
+
+        var service = new EmployeeService(_dbContext);
+        var result = await service.CreateAsync(new EmployeeUpsertRequest
+        {
+            FirstName = "Ada",
+            LastName = "Lovelace",
+            Email = "ada@example.com",
+            Salary = 4200m,
+            DepartmentId = department.Id,
+            PositionId = position.Id
+        });
+
+        Assert.True(result.Succeeded);
+
+        var employees = await service.GetAllAsync();
+        Assert.Single(employees);
+        Assert.Equal("Engineering", employees[0].DepartmentName);
+        Assert.Equal("Developer", employees[0].PositionTitle);
+    }
+
+    [Fact]
+    public async Task EmployeeService_Rejects_Invalid_Assignment()
+    {
+        var service = new EmployeeService(_dbContext);
+
+        var result = await service.CreateAsync(new EmployeeUpsertRequest
+        {
+            FirstName = "Alan",
+            LastName = "Turing",
+            Salary = 3000m,
+            DepartmentId = 999,
+            PositionId = 999
+        });
+
+        Assert.False(result.Succeeded);
+        Assert.Contains(nameof(EmployeeUpsertRequest.DepartmentId), result.ValidationErrors.Keys);
+        Assert.Contains(nameof(EmployeeUpsertRequest.PositionId), result.ValidationErrors.Keys);
     }
 }
