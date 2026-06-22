@@ -4748,11 +4748,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Application\\EmployeeStructureSystem.Application.csproj": {
-              "projectPath": "C:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Application\\EmployeeStructureSystem.Application.csproj"
+            "c:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Application\\EmployeeStructureSystem.Application.csproj": {
+              "projectPath": "c:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Application\\EmployeeStructureSystem.Application.csproj"
             },
-            "C:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Domain\\EmployeeStructureSystem.Domain.csproj": {
-              "projectPath": "C:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Domain\\EmployeeStructureSystem.Domain.csproj"
+            "c:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Domain\\EmployeeStructureSystem.Domain.csproj": {
+              "projectPath": "c:\\Users\\elena.kyurchieva\\Desktop\\Work\\AI\\Employee_Structure_System\\EmployeeStructureSystem.Domain\\EmployeeStructureSystem.Domain.csproj"
             }
           }
         }
