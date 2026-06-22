@@ -1,0 +1,12 @@
+C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Domain\bin\Debug\net9.0\EmployeeStructureSystem.Domain.deps.json
+C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Domain\bin\Debug\net9.0\EmployeeStructureSystem.Domain.dll
+C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Domain\bin\Debug\net9.0\EmployeeStructureSystem.Domain.pdb
+C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Domain\obj\Debug\net9.0\EmployeeStructureSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Domain\obj\Debug\net9.0\EmployeeStructureSystem.Domain.AssemblyInfoInputs.cache
+C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Domain\obj\Debug\net9.0\EmployeeStructureSystem.Domain.AssemblyInfo.cs
+C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Domain\obj\Debug\net9.0\EmployeeStructureSystem.Domain.csproj.CoreCompileInputs.cache
+C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Domain\obj\Debug\net9.0\EmployeeStructureSystem.Domain.sourcelink.json
+C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Domain\obj\Debug\net9.0\EmployeeStructureSystem.Domain.dll
+C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Domain\obj\Debug\net9.0\refint\EmployeeStructureSystem.Domain.dll
+C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Domain\obj\Debug\net9.0\EmployeeStructureSystem.Domain.pdb
+C:\Users\elena.kyurchieva\Desktop\Work\AI\Employee_Structure_System\EmployeeStructureSystem.Domain\obj\Debug\net9.0\ref\EmployeeStructureSystem.Domain.dll

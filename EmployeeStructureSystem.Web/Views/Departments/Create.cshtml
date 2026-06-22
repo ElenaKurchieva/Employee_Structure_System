@@ -1,0 +1,37 @@
+@model DepartmentFormViewModel
+
+@{
+    ViewData["Title"] = "Create Department";
+}
+
+<section class="page-header">
+    <div>
+        <p class="eyebrow">Departments</p>
+        <h1 class="h2 mb-2">Create department</h1>
+        <p class="section-copy mb-0">Add a new organization unit with an optional description.</p>
+    </div>
+</section>
+
+<section class="content-card form-card">
+    <form asp-action="Create" method="post" novalidate>
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-4">
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="page-actions">
+            <button type="submit" class="btn btn-primary">Create Department</button>
+            <a class="btn btn-outline-secondary" asp-action="Index">Cancel</a>
+        </div>
+    </form>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

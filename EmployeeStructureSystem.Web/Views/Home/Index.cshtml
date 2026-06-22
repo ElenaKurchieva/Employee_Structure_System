@@ -1,0 +1,30 @@
+﻿@model DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<section class="hero-panel mb-4">
+    <div>
+        <p class="eyebrow">Employee Structure System</p>
+        <h1>Organization dashboard</h1>
+        <p class="hero-copy">Manage departments and positions from a single internal admin surface built for clarity and low overhead.</p>
+    </div>
+    <div class="hero-actions">
+        <a class="btn btn-primary" asp-controller="Departments" asp-action="Index">Manage Departments</a>
+        <a class="btn btn-outline-primary" asp-controller="Positions" asp-action="Index">Manage Positions</a>
+    </div>
+</section>
+
+<section class="stats-grid">
+    <article class="stat-card">
+        <span class="stat-label">Departments</span>
+        <strong class="stat-value">@Model.TotalDepartments</strong>
+        <span class="stat-hint">Active units currently configured</span>
+    </article>
+    <article class="stat-card">
+        <span class="stat-label">Employees</span>
+        <strong class="stat-value">@Model.TotalEmployees</strong>
+        <span class="stat-hint">Current employee rows in the database</span>
+    </article>
+</section>

@@ -1,0 +1,31 @@
+@model PositionDeleteViewModel
+
+@{
+    ViewData["Title"] = "Delete Position";
+}
+
+<section class="page-header">
+    <div>
+        <p class="eyebrow">Positions</p>
+        <h1 class="h2 mb-2">Delete position</h1>
+        <p class="section-copy mb-0">Deletion is blocked if employees are still assigned to this position.</p>
+    </div>
+</section>
+
+<section class="content-card form-card">
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+    <dl class="row mb-4">
+        <dt class="col-sm-3">Title</dt>
+        <dd class="col-sm-9">@Model.Title</dd>
+        <dt class="col-sm-3">Description</dt>
+        <dd class="col-sm-9">@(string.IsNullOrWhiteSpace(Model.Description) ? "No description" : Model.Description)</dd>
+        <dt class="col-sm-3">Employees</dt>
+        <dd class="col-sm-9">@Model.EmployeeCount</dd>
+    </dl>
+    <form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+        <div class="page-actions">
+            <button type="submit" class="btn btn-danger">Delete Position</button>
+            <a class="btn btn-outline-secondary" asp-action="Index">Cancel</a>
+        </div>
+    </form>
+</section>
